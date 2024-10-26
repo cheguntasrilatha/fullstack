@@ -1,0 +1,15 @@
+p{
+    color:blue;
+}
+/*universal*/
+*{
+    color:brown;
+}
+/* class selector*/
+.myclass{
+    background-color:burlywood;
+}
+/*ID selector*/
+#myclass{
+    background-color: blueviolet;
+}

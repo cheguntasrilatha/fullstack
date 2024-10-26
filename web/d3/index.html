@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div>
+    <form class="login-form" onsubmit="Login(event)">
+        <input type="email" name="" class="login-input" id="email" placeholder="email" required>
+        <input type="password" name="" class="login-input" id="password" placeholder="password" required>
+        <input type="submit" value="Login" class="login-btn">
+    </form>
+    <button class="login-btn" onclick="myfunction()"> Click </button>
+</div>
+</body>
+<script>
+    console.log("Hello");
+    let x="10";
+    x=30;
+    console.log(x);
+    x=false;
+    console.log(x);
+    x=null;
+    console.log(x);
+    x=undefined
+    console.log(x);
+    let obj={
+        name: "a",
+        loc: "d",
+        age: 200,
+        isalive: false
+    }
+    let obj2 = {
+        name: "a1",
+        loc: "b2",
+        age: 0,
+        isalive: true
+    }
+    console.log(obj2.name)
+    const{ name,loc,age,isalive} = obj2
+    console.log(name)
+    console.log(obj,obj2);
+    let arr=["a",obj,x,obj2]
+    //console.log(arr);
+    let arr2=[1,2,3,4,5];
+    let arr3=[arr,"sdfghj",arr2];
+    let arr4=[...arr,...arr2];
+    console.log(arr3);
+    console.log(arr4);
+    function myfunction() {
+        console.error("hello man")
+        console.warn("hello man")
+    }
+   // myfunction()
+   function Login(event) {
+    event.preventDefault()
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
+
+    console.log("Login:"+email+ " "+password);
+    if(password.length<5){
+        alert('password should contains more than 5 letters')
+    }else if (email ==="ahjdgu@gmail.com"&& password==="2345678"){
+    alert('Login success!')
+    API()
+    } else {
+        alert('invalid credirials')
+    }
+    }
+   
+    async function API(){
+      console.log("called API");
+    }
+   
+   try {
+    const resp= await fetch('https://671b71fa2c842d92c37ff4d2.mockapi.io/')
+      if(resp.status === 200){
+        console.log("success")
+        console.log(await resp.json())
+      }
+   } catch (error){
+  console.error(error)
+   }
+
+    
+
+</script>
